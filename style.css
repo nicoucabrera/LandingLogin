@@ -1,0 +1,358 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100dvh;
+    background-image: url("Assets/font.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+body {
+    height: 100dvh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 1fr 60px;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+    color: aliceblue;
+    
+}
+
+
+header {
+    grid-area: header;
+    width: 100%;
+    display: flex;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+
+    @media (max-width: 768px) {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        user-select: none;
+        z-index: 2;
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+    padding: 0 20px;
+}
+
+ul.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    list-style: none;
+
+    @media (max-width: 768px) {
+        position: absolute;
+        top: 70px;
+        
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.85); 
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        padding: 20px 0;
+        z-index: 1;
+    }
+}
+@media (max-width: 768px) {
+    .menu-toggle:checked + .menu-icon + .nav-links {
+        display: flex;
+        animation: wipe-in-down 2.5s cubic-bezier(.25, 1, .30, 1) both;
+    }
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+    .nav-links li a {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        text-decoration: none;
+        color: inherit;
+        font-weight: 600;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        
+        
+
+    }
+    .nav-links li a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+    }
+    .search-bar {
+        min-width: 60%;
+        max-width: none;
+        margin-top: 10px;
+    }
+}
+
+@keyframes wipe-in-down {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+[transition-style="in:wipe:down"] {
+  animation: 2.5s cubic-bezier(.25, 1, .30, 1) wipe-in-down both;
+}
+
+@keyframes wipe-in-up {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+[transition-style="in:wipe:up"] {
+  animation: 2.5s cubic-bezier(.25, 1, .30, 1) wipe-in-up both;
+}
+
+li {
+    font-size: 1.2rem;
+    font-weight: 600;
+    list-style: none;
+}
+
+li a:hover {
+    margin-bottom: 2px;
+    border-bottom: 3px solid rgb(255, 0, 149);
+    transition: 0.3s;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 35%;
+    max-width: 300px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+.search-bar:focus-within {
+    border: 1px solid rgb(255, 0, 149);
+    transition: 1s;
+}
+
+.search-input {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+    height: 80%;
+    padding: 0;
+    color: aliceblue;
+}
+
+.search-input::placeholder {
+    color: aliceblue;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.search-button {
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+main {
+    grid-area: main;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+
+     @media (width < 768px) {
+        width: 80%;
+        height: 90%;
+    }
+}
+
+.container-form {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "content login-form";
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    height: 100%;
+   
+    @media (width < 1080px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "content"
+            "login-form";
+    }
+}
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+    text-align: center;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 1);
+    grid-area: content;
+}
+
+.login-form {
+    justify-self: flex-end;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 280px;
+    max-width: 500px;
+    padding: 20px 0;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    grid-area: login-form;
+    @media (width < 1080px) {
+        padding: 20px 0;
+        justify-self: center;
+        min-width: 100%;
+    }
+}
+
+
+
+.input-login {
+    width: 80%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: aliceblue;
+
+    @media (width < 1080px) {
+        width: 75%;
+    }
+}
+
+.input-login::placeholder {
+    color: aliceblue;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.input-login:focus {
+    outline: none;
+}
+
+.input-login:focus-within {
+    border: 1px solid rgb(255, 0, 149);
+    transition: 1s;
+}
+
+
+a, h1, h2 {
+    text-decoration: none;
+    color: aliceblue;
+    text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.8);
+}
+
+
+
+.btn-login {
+    width: 50%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(223, 97, 170);
+    color: aliceblue;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    background-color: rgb(255, 0, 149, 0.8);
+    transition: 0.3s;
+}
+
+.btn-login:active {
+    background-color: rgb(255, 0, 149);
+    transform: scale(0.99) translateY(2px);
+    transition: 0.3s;
+}
+
+.buttons-social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 80%;
+    margin: 10px 0;
+}
+
+.google-login, .twitter-icon, .facebook-icon  {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    justify-self: center;
+}
+
+.google-login:hover, .twitter-icon:hover, .facebook-icon:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.copy {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+}

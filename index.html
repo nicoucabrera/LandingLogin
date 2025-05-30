@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+                &#9776;
+            </label>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Register</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="search" placeholder="Buscar..." class="search-input">
+                <a href="#"><img src="./Assets/search.svg" alt="Buscar" class="search-icon"></a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container-form">
+            <div class="content">
+                <h1>WELCOME!</h1>
+                <h2>To Our Login Page</h2>
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus optio consequatur praesentium, dicta reprehenderit repellat eum veritatis esse rerum! Iste amet tempora ipsum delectus hic harum magni ipsam rem nam?</p>
+            </div>
+            <form action="#" method="post" class="login-form">
+                <h2>Login</h2>
+                <br>
+                <input class="input-login" type="text" id="username" name="username" placeholder="Usuario" required>
+                <br>
+                <input class="input-login" type="password" id="password" name="password" placeholder="Contraseña"
+                    required>
+                <br>
+                <button type="button" class="btn-login">Login</button>
+                <div class="buttons-social">
+                    <img src="./Assets/facebook.svg" alt="Facebook Login" class="facebook-icon">
+                    <img src="./Assets/twitter.svg" alt="Twitter Login" class="twitter-icon">
+                    <img src="./Assets/google-login.svg" alt="google-login" class="google-login">
+                </div>
+
+                <p class="register-link">Don't have an account? <a href="#">Sign up here</a></p>
+                <br>
+                <p class="forgot-password"><a href="#">Forgot your password?</a></p>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="copy">
+            <p>&copy; Login Nicoucabrera 2025</p>
+            <a class="github" href="http://github.com/nicoucabrera">
+                <img src="./Assets/github.svg" alt="GitHub Profile Picture">
+            </a>
+        </div>
+        
+    </footer>
+</body>
+
+</html>
