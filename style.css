@@ -147,7 +147,7 @@ li {
 
 li a:hover {
     margin-bottom: 2px;
-    border-bottom: 3px solid rgb(255, 0, 149);
+        text-shadow: 2px 2px 1px rgba(255, 0, 149);
     transition: 0.3s;
 }
 
