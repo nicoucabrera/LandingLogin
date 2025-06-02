@@ -31,6 +31,7 @@ header {
     grid-area: header;
     width: 100%;
     display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .menu-toggle {
@@ -215,7 +216,7 @@ main {
 
 .container-form {
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 65% 35%;
     grid-template-rows: 1fr;
     grid-template-areas: 
         "content login-form";
@@ -240,7 +241,7 @@ main {
     place-content: center;
     width: 100%;
     height: 100%;
-    padding: 20px 0;
+    padding: 20px 20px;
     text-align: center;
     text-shadow: 2px 2px 1px rgba(0, 0, 0, 1);
     grid-area: content;
@@ -254,11 +255,10 @@ main {
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-width: 280px;
     max-width: 500px;
     padding: 20px 0;
     height: 100%;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     grid-area: login-form;
     @media (width < 1080px) {
         padding: 20px 0;
@@ -349,8 +349,16 @@ a, h1, h2 {
     transition: 0.3s;
 }
 
-.copy {
+footer {
     grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+.copy {
     display: flex;
     justify-content: center;
     gap: 1rem;
