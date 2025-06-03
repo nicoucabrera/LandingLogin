@@ -4,16 +4,10 @@
     padding: 0;
 }
 
-html {
-    height: 100dvh;
-    background-image: url("Assets/font.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-}
+
 
 body {
-    height: 100dvh;
+    min-height: 100dvh;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 60px 1fr 60px;
@@ -22,7 +16,8 @@ body {
         "main"
         "footer";
     color: aliceblue;
-    
+    background: linear-gradient(135deg,skyblue, steelblue, skyblue);
+
 }
 
 
@@ -203,12 +198,17 @@ main {
     justify-content: center;
     align-items: center;
     width: 80%;
-    height: 50%;
+    height: 80%;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 10px;
 
-     @media (width < 768px) {
-        width: 80%;
+    @media (width < 1080px) {
+        width: 60%;
+        height: 90%;
+    }
+
+    @media (width < 768px) {
+        width: 85%;
         height: 90%;
     }
 }
@@ -216,7 +216,7 @@ main {
 .container-form {
     display: grid;
     grid-template-columns: 65% 35%;
-    grid-template-rows: 1fr;
+    grid-template-rows: 100%;
     grid-template-areas: 
         "content login-form";
     align-items: center;
@@ -226,7 +226,7 @@ main {
    
     @media (width < 1080px) {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 35% 65%;
         grid-template-areas: 
             "content"
             "login-form";
@@ -247,7 +247,7 @@ main {
 }
 
 .login-form {
-    justify-self: flex-end;
+    
     border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     flex-direction: column;
